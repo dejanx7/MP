@@ -1,0 +1,28 @@
+<h2>Register User</h2>
+<form [formGroup]="userRegisterForm" (ngSubmit)="register()">
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="username" formControlName="username"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" formControlName="email"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" formControlName="password"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Register</button></td>   
+        </tr>
+    </table>
+</form>
+
+<div class="alert alert-warning" *ngIf="isSignUpFailed">
+    Signup failed!<br />{{ errorMessage }}
+  </div>
+
+<div class="alert alert-success" *ngIf="isSuccessful">
+  Your registration is successful!
+</div>

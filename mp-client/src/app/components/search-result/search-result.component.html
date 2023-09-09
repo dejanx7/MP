@@ -1,0 +1,28 @@
+<h2>Search Result:</h2>
+<table style="width:100 ">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Serving Size</th>
+            <th>Calories</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let food of resultArray" class="table table-striped">
+        <tr>
+            <td>
+                {{food.Name}}
+            </td>
+            <td>
+                {{food.Serving_Size}}
+            </td>
+            <td>
+                {{food.Calories}}
+            </td>
+            <td>
+                <img src={{food.Image}} width="50">
+            </td>
+        </tr>
+    </tbody>
+    
+
+</table>
