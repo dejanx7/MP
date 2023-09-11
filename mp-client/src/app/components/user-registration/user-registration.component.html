@@ -1,9 +1,14 @@
 <h2>Register User</h2>
-<form [formGroup]="userRegisterForm" (ngSubmit)="register()">
+<form [formGroup]="userRegisterForm" (ngSubmit)="register()" *ngIf="!isSuccessful">
     <table>
         <tr>
             <td>Username:</td>
             <td><input type="text" name="username" formControlName="username"></td>
+        </tr>
+        <tr>
+            <div *ngIf="isSubmitted && userRegisterForm.get('username').hasError('required')">
+                Please a valid username.
+            </div>
         </tr>
         <tr>
             <td>Email:</td>

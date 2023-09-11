@@ -11,15 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.mpserver.Nutrix.Service.NutrixService;
 
+@CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
 @RestController
-@RequestMapping
-@CrossOrigin
+@RequestMapping(path = "/nutri")
 public class NutrixController {
 
     @Autowired
     NutrixService nutrixService;
 
     @GetMapping(path ="/getmacros" , produces = MediaType.APPLICATION_JSON_VALUE)
+    
     public ResponseEntity<String> getQueryResult(@RequestParam String query){
 
         

@@ -1,0 +1,27 @@
+<h2>User Login</h2>
+<form [formGroup]="loginForm" (ngSubmit)="login()" *ngIf="!isLoggedIn">
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" name="username" formControlName="username"></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" formControlName="password"></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Login</button></td>   
+        </tr>
+    </table>
+</form>
+
+<div class="form-group">
+    <div *ngIf="isSubmitted && isLoginFailed" class="alert alert-danger" role="alert">
+      Login failed: {{ errorMessage }}
+    </div>
+</div>
+<div class="alert alert-success" *ngIf="isLoggedIn">
+    Logged in as {{ username }}.
+</div>
+
+

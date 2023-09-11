@@ -1,0 +1,14 @@
+Mongo Document
+[
+    
+_id: <object id>
+user_id: <user_id>
+DateTime: <data and time of log>
+
+Food: [
+    0: Food 1[Name, Serving Size, Calories, Total Carbohydrate, Total Fats, Saturated Fats, Protein, Sugar, Dietary Fiber, Cholesterol, Sodium, Potassium]
+    1: Food 2[Name, Serving Size, Calories, Total Carbohydrate, Total Fats, Saturated Fats, Protein, Sugar, Dietary Fiber, Cholesterol, Sodium, Potassium]
+    2: Food 3[Name, Serving Size, Calories, Total Carbohydrate, Total Fats, Saturated Fats, Protein, Sugar, Dietary Fiber, Cholesterol, Sodium, Potassium]
+]
+
+]

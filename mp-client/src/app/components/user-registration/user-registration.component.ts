@@ -13,7 +13,7 @@ export class UserRegistrationComponent implements OnInit{
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
 
-
+  isSubmitted = false;
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
@@ -31,9 +31,9 @@ export class UserRegistrationComponent implements OnInit{
   initForm(): FormGroup{
 
     return this.fb.group({
-      username: this.fb.control<string>('', [Validators.required]),
-      email: this.fb.control<string>('', [Validators.required]),
-      password: this.fb.control<string>('', [Validators.required])
+      username: this.fb.control<string>('', [Validators.required, Validators.minLength(4)]),
+      email: this.fb.control<string>('', [Validators.required, Validators.email]),
+      password: this.fb.control<string>('', [Validators.required, Validators.minLength(4)])
     });
 
   }
@@ -53,11 +53,13 @@ export class UserRegistrationComponent implements OnInit{
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        this.isSubmitted = true;
       },
 
       error: (err) => {
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
+        this.isSubmitted = true;
       }
       
     })

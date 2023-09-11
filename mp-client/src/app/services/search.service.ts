@@ -19,7 +19,7 @@ export class SearchService {
     queryParams = queryParams.set("query", query)
 
 
-    return this.http.get('/getmacros', {params : queryParams});
+    return this.http.get('http://localhost:8081/nutri/getmacros', {params : queryParams});
 
   }
 
