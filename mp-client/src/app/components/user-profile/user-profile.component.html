@@ -3,7 +3,6 @@
 <div *ngFor="let log of logList">
     <div>
         <h2>{{log.DateTime | date: 'dd/MM/yyyy HH:mm' }}</h2>>
-        <h2>{{log._id}}</h2>
         
         <div *ngFor="let food of log.Food">
             {{food.Name}}

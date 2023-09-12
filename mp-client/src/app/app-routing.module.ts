@@ -6,14 +6,15 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { HomeComponent } from './components/home/home.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { authGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'register', component: UserRegistrationComponent},
   {path: 'login', component: UserLoginComponent},
-  {path: 'search', component: FoodSearchComponent},
-  {path: 'profile', component: UserProfileComponent},
-  {path: 'testuser', component: TestUserComponent},
+  {path: 'search', component: FoodSearchComponent, canActivate:[authGuard]},
+  {path: 'profile', component: UserProfileComponent, canActivate:[authGuard]},
+  {path: 'testuser', component: TestUserComponent, canActivate:[authGuard]},
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 
 ];
