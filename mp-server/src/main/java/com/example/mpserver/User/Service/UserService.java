@@ -3,6 +3,7 @@ package com.example.mpserver.User.Service;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,12 @@ public class UserService {
 
     @Autowired
     UserFoodRepository userFoodRepository;
+
+
+    public String generateid(){
+
+        return UUID.randomUUID().toString().substring(0,8);
+    }
 
     public void saveLogToDb(String log) {
 
@@ -59,6 +66,7 @@ public class UserService {
 
         }
 
+        newLog.append("_id", generateid());
         newLog.append("user_id", userid);
         newLog.append("DateTime", datetime);
         newLog.append("Food", foodListArray);
@@ -72,6 +80,11 @@ public class UserService {
         return userFoodRepository.getUserLogById(user_id);
 
 
+    }
+
+    public void deleteUserLog(String logId){
+
+        userFoodRepository.deleteUserLog(logId);
     }
 
 }

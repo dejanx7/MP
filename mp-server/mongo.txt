@@ -1,0 +1,96 @@
+// //for get userlog by id
+
+// [
+//     {
+//         "DateTime" : "2023-09-12T11:50",
+//         "Food": [
+
+//             {
+//                 "Name": "white bread",
+//                 "servingQty": "4 slice (1.3 oz)",
+//                 "Calories": 391,
+//                 "totalFat": 4,
+//                 "saturatedFat": 1,
+//                 "carb": 72,
+//                 "protein": 13,
+//                 "sugar": 8,
+//                 "fiber": 3,
+//                 "cholesterol": 0,
+//                 "sodium": 721,
+//                 "potassium": 185,
+//                 "image": "https://nix-tag-images.s3.amazonaws.com/227_highres.jpg",
+//                 "_class": "com.example.mpserver.Nutrix.Model.Food"
+
+//             },
+
+//             {
+//                 "Name": "chicken breast",
+//                 "servingQty": "200 g",
+//                 "Calories": 330,
+//                 "totalFat": 7,
+//                 "saturatedFat": 2,
+//                 "carb": 0,
+//                 "protein": 62,
+//                 "sugar": 0,
+//                 "fiber": 0,
+//                 "cholesterol": 170,
+//                 "sodium": 148,
+//                 "potassium": 512,
+//                 "image": "https://nix-tag-images.s3.amazonaws.com/7820_highres.jpg",
+//                 "_class": "com.example.mpserver.Nutrix.Model.Food"
+
+//             }
+//         ]
+
+
+//     },
+
+//     {
+
+//         "DateTime" : "2023-09-12T11:50",
+//         "Food": [
+
+//             {
+//                 "Name": "white bread",
+//                 "servingQty": "4 slice (1.3 oz)",
+//                 "Calories": 391,
+//                 "totalFat": 4,
+//                 "saturatedFat": 1,
+//                 "carb": 72,
+//                 "protein": 13,
+//                 "sugar": 8,
+//                 "fiber": 3,
+//                 "cholesterol": 0,
+//                 "sodium": 721,
+//                 "potassium": 185,
+//                 "image": "https://nix-tag-images.s3.amazonaws.com/227_highres.jpg",
+//                 "_class": "com.example.mpserver.Nutrix.Model.Food"
+
+//             },
+
+//             {
+//                 "Name": "chicken breast",
+//                 "servingQty": "200 g",
+//                 "Calories": 330,
+//                 "totalFat": 7,
+//                 "saturatedFat": 2,
+//                 "carb": 0,
+//                 "protein": 62,
+//                 "sugar": 0,
+//                 "fiber": 0,
+//                 "cholesterol": 170,
+//                 "sodium": 148,
+//                 "potassium": 512,
+//                 "image": "https://nix-tag-images.s3.amazonaws.com/7820_highres.jpg",
+//                 "_class": "com.example.mpserver.Nutrix.Model.Food"
+
+//             }
+//         ]
+
+
+
+//     }
+    
+// ]
+
+

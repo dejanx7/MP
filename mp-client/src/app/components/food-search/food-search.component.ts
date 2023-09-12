@@ -21,6 +21,7 @@ export class FoodSearchComponent {
   resultArray : any[] = [];
   hasValue = false;
   errorMessage = '';
+  responseMessage = '';
 
   @ViewChild('query')
   query! : ElementRef;
@@ -67,7 +68,11 @@ export class FoodSearchComponent {
     const dataTime = this.dateTime.nativeElement.value
     const userId = this.storageService.getUser().id;
 
-    this.searchService.postToDb(foodList, dataTime,userId);
+    
+
+    this.searchService.postToDb(foodList, dataTime,userId).subscribe({
+      next: (response) => {console.log(response), this.responseMessage = response }
+    })
 
 
   }

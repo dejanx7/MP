@@ -1,1 +1,30 @@
 <p>user-profile works!</p>
+
+<div *ngFor="let log of logList">
+    <div>
+        <h2>{{log.DateTime | date: 'dd/MM/yyyy HH:mm' }}</h2>>
+        <h2>{{log._id}}</h2>
+        
+        <div *ngFor="let food of log.Food">
+            {{food.Name}}
+            {{food.servingQty}}
+            {{food.Calories}}
+            {{food.totalFat}}
+            {{food.saturatedFat}}
+            {{food.carb}}
+            {{food.protein}}
+            {{food.sugar}}
+            {{food.fiber}}
+            {{food.cholesterol}}
+            {{food.sodium}}
+            {{food.potassium}}
+            <img src="{{food.image}}" width="20">
+            
+            
+
+        </div>
+
+
+    </div>
+    <button class="btn btn-danger" (click)="deleteLog(log._id)">Delete</button>
+</div>

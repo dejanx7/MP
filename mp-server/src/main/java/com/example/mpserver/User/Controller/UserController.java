@@ -1,10 +1,10 @@
 package com.example.mpserver.User.Controller;
 
-import org.bson.json.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.mpserver.User.Model.FoodLog;
 import com.example.mpserver.User.Repository.UserFoodRepository;
 import com.example.mpserver.User.Service.UserService;
-
-import jakarta.json.Json;
 
 @CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
 @RestController
@@ -38,7 +35,7 @@ public class UserController {
 
             System.out.println(log);
             userService.saveLogToDb(log);
-            return "received successfully";
+            return "Added successfully";
 
         } else{
 
@@ -54,6 +51,15 @@ public class UserController {
         
 
 
+    }
+
+
+    @DeleteMapping("/deletelog")
+    public String deleteUserLog(@RequestParam String logId){
+
+
+        userService.deleteUserLog(logId);
+        return "Deleted Successfully";
     }
 
 

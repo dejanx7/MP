@@ -25,7 +25,7 @@ export class SearchService {
 
   }
 
-  postToDb(foodList : any[], dateTime : any, id : any){
+  postToDb(foodList : any[], dateTime : any, id : any) : Observable<any>{
 
 
     const newLog : FoodLog = {
@@ -37,9 +37,25 @@ export class SearchService {
 
     console.log("new log is ", newLog);
 
-    this.http.post('http://localhost:8081/db/postlog', newLog ,{responseType: 'text'}).subscribe({
-      next: (result) => console.log(result)
-    })
+    return this.http.post('http://localhost:8081/db/postlog', newLog ,{responseType: 'text'});
+
+  }
+
+  getUserLog(id : any) : Observable<any>{
+
+    let queryParams = new HttpParams();
+    queryParams = queryParams.set("user_id", id);
+
+    return this.http.get('http://localhost:8081/db/getlog', {params : queryParams});
+
+  }
+
+  deleteUserLog(logId : any): Observable<any>{
+
+    let queryParams = new HttpParams();
+    queryParams = queryParams.set("logId", logId);
+
+    return this.http.delete('http://localhost:8081/db/deletelog', {params : queryParams});
 
   }
 
