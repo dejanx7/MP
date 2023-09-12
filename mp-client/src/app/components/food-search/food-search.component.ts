@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Food } from 'src/app/model/food';
 import { SearchService } from 'src/app/services/search.service';
+import { StorageService } from 'src/app/services/storage.service';
+
 @Component({
   selector: 'app-food-search',
   templateUrl: './food-search.component.html',
@@ -11,7 +13,9 @@ import { SearchService } from 'src/app/services/search.service';
 export class FoodSearchComponent {
 
   private router =  inject(Router);
-  private searchService = inject(SearchService)
+  private searchService = inject(SearchService);
+  private storageService = inject(StorageService)
+
   sub$ : Subscription;
   searchQuery : string;
   resultArray : any[] = [];
@@ -20,6 +24,9 @@ export class FoodSearchComponent {
 
   @ViewChild('query')
   query! : ElementRef;
+
+  @ViewChild('dateTime')
+  dateTime! : ElementRef;
 
   search(){
 
@@ -47,6 +54,22 @@ export class FoodSearchComponent {
 
     let index = this.resultArray.indexOf(food);
     this.resultArray.splice(index,1);
+  }
+
+
+  saveLogToDb(){
+
+    console.log('food array is ', this.resultArray);
+    console.log('datetime is  ', this.dateTime.nativeElement.value);
+    console.log('user id is ', this.storageService.getUser().id);
+
+    const foodList = this.resultArray;
+    const dataTime = this.dateTime.nativeElement.value
+    const userId = this.storageService.getUser().id;
+
+    this.searchService.postToDb(foodList, dataTime,userId);
+
+
   }
 
 }

@@ -83,12 +83,14 @@
 
 <table>
     <tr>
-        <input type="datetime-local">
+        <input type="datetime-local" #dateTime>
     </tr>
     <tr>
-        <button>Add to log</button>
+        <button (click)="saveLogToDb()">Add to log</button>
     </tr>
 </table>
 
 </div>
+
+<div></div>
 

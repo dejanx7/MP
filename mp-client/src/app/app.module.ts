@@ -12,6 +12,7 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { TestUserComponent } from './components/test-user/test-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { httpInterceptorProviders } from './helpers/auth.interceptor';
+import { DonateComponent } from './components/donate/donate.component';
 
 
 
@@ -23,6 +24,7 @@ import { httpInterceptorProviders } from './helpers/auth.interceptor';
     UserLoginComponent,
     TestUserComponent,
     HomeComponent,
+    DonateComponent,
 
     
   ],

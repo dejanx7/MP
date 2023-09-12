@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { httpInterceptorProviders } from '../helpers/auth.interceptor';
 
 
-const ApiUrl = '/api/test/'
+const ApiUrl = 'http://localhost:8081/api/test/'
 
 
 

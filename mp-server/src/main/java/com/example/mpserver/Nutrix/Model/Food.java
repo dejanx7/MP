@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 public class Food {
     
 
-    private String name;
+    private String Name;
     private String servingQty;
-    private Integer calories;
+    private Integer Calories;
     private Integer totalFat;
     private Integer saturatedFat;
     private Integer carb;
@@ -22,6 +22,7 @@ public class Food {
     private Integer cholesterol;
     private Integer sodium;
     private Integer potassium;
+    private String image;
 
 
 

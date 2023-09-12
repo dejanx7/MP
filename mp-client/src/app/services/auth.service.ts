@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CanActivateFn } from '@angular/router';
 import { Observable } from 'rxjs';
 
-const AUTH_API = '/api/auth/';
+const AUTH_API = 'http://localhost:8081/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -11,7 +12,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthService{
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<any> {
