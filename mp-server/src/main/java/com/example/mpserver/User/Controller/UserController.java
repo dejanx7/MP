@@ -17,7 +17,7 @@ import com.example.mpserver.User.Service.UserService;
 
 @CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
 @RestController
-@RequestMapping("/db")
+@RequestMapping("api/db")
 public class UserController {
 
     @Autowired

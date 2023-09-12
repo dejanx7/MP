@@ -54,7 +54,7 @@ export class UserLoginComponent implements OnInit {
         this.isLoggedIn = true;
         this.isSubmitted = true;
         this.username = this.storageService.getUser().username;
-        // this.reloadPage();
+        this.reloadPage();
       },
 
       error: (err) => {
@@ -70,7 +70,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   reloadPage(): void {
-    window.location.reload();
+    this.router.navigate(['/home'])
   }
 
 

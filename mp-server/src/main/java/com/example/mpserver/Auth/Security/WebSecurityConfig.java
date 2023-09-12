@@ -59,8 +59,8 @@ public class WebSecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/test/**").permitAll()
-                        .requestMatchers("/nutri/**").permitAll()
-                        .requestMatchers("/db/**").permitAll()
+                        .requestMatchers("/api/nutri/**").permitAll()
+                        .requestMatchers("/api/db/**").permitAll()
                         .anyRequest().authenticated());
 
         http.authenticationProvider(authenticationProvider());

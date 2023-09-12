@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from './services/auth.service';
 import { StorageService } from './services/storage.service';
 import { EventBusService } from './shared/event-bus.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,8 @@ export class AppComponent {
   username?: string;
 
   eventBusSub?: Subscription;
+
+  private router = inject(Router);
 
   constructor(
     private storageService: StorageService,
@@ -47,7 +50,7 @@ export class AppComponent {
       next: res => {
         console.log(res);
         this.storageService.clean();
-
+        this.router.navigate(['/home']);
         window.location.reload();
       },
       error: err => {

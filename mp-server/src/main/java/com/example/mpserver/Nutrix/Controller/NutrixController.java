@@ -14,14 +14,14 @@ import com.example.mpserver.Nutrix.Service.NutrixService;
 
 @CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
 @RestController
-@RequestMapping(path = "/nutri")
+@RequestMapping(path = "api/nutri")
 public class NutrixController {
 
     @Autowired
     NutrixService nutrixService;
-
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     @GetMapping(path ="/getmacros" , produces = MediaType.APPLICATION_JSON_VALUE)
-
+    
     public ResponseEntity<String> getQueryResult(@RequestParam String query){
 
         
