@@ -1,29 +1,54 @@
-<p>user-profile works!</p>
+<h1>Food Log</h1>
 
-<div *ngFor="let log of logList">
-    <div>
-        <h2>{{log.DateTime | date: 'dd/MM/yyyy HH:mm' }}</h2>>
-        
-        <div *ngFor="let food of log.Food">
-            {{food.Name}}
-            {{food.servingQty}}
-            {{food.Calories}}
-            {{food.totalFat}}
-            {{food.saturatedFat}}
-            {{food.carb}}
-            {{food.protein}}
-            {{food.sugar}}
-            {{food.fiber}}
-            {{food.cholesterol}}
-            {{food.sodium}}
-            {{food.potassium}}
-            <img src="{{food.image}}" width="20">
-            
-            
+<div *ngFor="let log of logList" class="container mt-4">
+    <table>
+        <tr>
+            <td>
+                <h3>{{ log.DateTime | date: 'dd/MM/yyyy HH:mm' }}</h3>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteLog(log._id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+    
+    
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Serving Size</th>
+          <th>Calories</th>
+          <th>Total Fats</th>
+          <th>Saturated Fats</th>
+          <th>Carbohydrates</th>
+          <th>Protein</th>
+          <th>Sugar</th>
+          <th>Dietary Fiber</th>
+          <th>Cholesterol</th>
+          <th>Sodium</th>
+          <th>Potassium</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let food of log.Food">
+        <tr>
+          <td>{{ food.Name }}</td>
+          <td>{{ food.servingQty }}</td>
+          <td>{{ food.Calories }}</td>
+          <td>{{ food.totalFat }}</td>
+          <td>{{ food.saturatedFat }}</td>
+          <td>{{ food.carb }}</td>
+          <td>{{ food.protein }}</td>
+          <td>{{ food.sugar }}</td>
+          <td>{{ food.fiber }}</td>
+          <td>{{ food.cholesterol }}</td>
+          <td>{{ food.sodium }}</td>
+          <td>{{ food.potassium }}</td>
+          <td><img src="{{food.image}}" width="50"></td>
+        </tr>
+      </tbody>
+      
+    </table>
 
-        </div>
-
-
-    </div>
-    <button class="btn btn-danger" (click)="deleteLog(log._id)">Delete</button>
-</div>
+  </div>
+  

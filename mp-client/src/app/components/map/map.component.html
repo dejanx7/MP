@@ -1,4 +1,9 @@
-<div *ngIf="apiLoaded | async">
-    <google-map [options]="options"></google-map>
-</div>
-<p>map works</p>
+<h2>If you get lost here's a map </h2>
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div>
+      <div *ngIf="apiLoaded | async">
+        <google-map [options]="options"></google-map>
+      </div>
+    </div>
+  </div>
+  
