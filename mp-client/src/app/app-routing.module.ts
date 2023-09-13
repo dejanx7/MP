@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { authGuard } from './guard/auth.guard';
+import { DonateComponent } from './components/donate/donate.component';
+import { MapComponent } from './components/map/map.component';
+
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -14,6 +17,8 @@ const routes: Routes = [
   {path: 'login', component: UserLoginComponent},
   {path: 'search', component: FoodSearchComponent, canActivate:[authGuard]},
   {path: 'profile', component: UserProfileComponent, canActivate:[authGuard]},
+  {path: 'donate', component: DonateComponent},
+  {path: 'map', component: MapComponent},
   {path: 'testuser', component: TestUserComponent, canActivate:[authGuard]},
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 

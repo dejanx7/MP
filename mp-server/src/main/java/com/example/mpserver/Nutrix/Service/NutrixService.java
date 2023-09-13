@@ -1,6 +1,8 @@
 package com.example.mpserver.Nutrix.Service;
 
 import java.io.StringReader;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -20,14 +22,18 @@ import jakarta.json.JsonValue;
 @Service
 public class NutrixService {
 
-    // add to app properties later *******************
-    private final String apiURL = "https://trackapi.nutritionix.com/v2/natural/nutrients";
-    private final String apiAppId = "3f67edd5";
-    private final String apiAppKey = "76dbeae12ed1eaae957a4c0467979214";
+    @Value("${nutritionix.api.url}")
+    private String apiURL;
+
+    @Value("${nutritionix.api.id}")
+    private String apiAppId;
+
+    @Value("${nutritionix.api.key}")
+    private String apiAppKey;
 
     RestTemplate template = new RestTemplate();
 
-    public JsonArray getMacros(String query) {
+    public String getMacros(String query) {
 
         JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
         JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
@@ -88,7 +94,7 @@ public class NutrixService {
 
         }
 
-        return jsonArrayBuilder.build();
+        return jsonArrayBuilder.build().toString();
 
     }
 

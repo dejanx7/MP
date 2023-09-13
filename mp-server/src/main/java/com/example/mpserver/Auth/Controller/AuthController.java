@@ -31,6 +31,7 @@ import com.example.mpserver.Auth.Repository.RoleRepository;
 import com.example.mpserver.Auth.Repository.UserRepository;
 import com.example.mpserver.Auth.Security.Jwt.JwtUtils;
 import com.example.mpserver.Auth.Security.Service.UserDetailsImpl;
+import com.example.mpserver.Mail.MailService;
 
 import jakarta.validation.Valid;
 
@@ -52,6 +53,9 @@ public class AuthController {
 
   @Autowired
   JwtUtils jwtUtils;
+
+  @Autowired
+  MailService mailService;
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -77,6 +81,7 @@ public class AuthController {
   }
 
   @PostMapping("/signup")
+  // @EventListener(ApplicationReadyEvent.class)
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
@@ -125,6 +130,10 @@ public class AuthController {
 
     user.setRoles(roles);
     userRepository.save(user);
+
+    mailService.sendSimpleEmail(signUpRequest.getEmail(), "MacroTracker account successfully created", "Thank you for registering " + signUpRequest.getUsername());
+
+
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
