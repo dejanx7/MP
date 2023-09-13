@@ -1,113 +1,15 @@
-<!-- <h2>Search Food</h2>
-<table>
-    <tr>
-        <td>
-            <textarea id="" cols="30" rows="3" #query></textarea>
-        </td>
-        <td>
-            <button (click)="search()">Search</button>
-        </td>
-    </tr>
+<div class="container">
 
-</table >
-
-<div *ngIf="hasValue">  
-    <h2>Search Result:</h2>
-<table style="width:100 " class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Serving Size</th>
-            <th>Calories</th>
-            <th>Total Carbohydrates</th>
-            <th>Total Fats</th>
-            <th>Saturated Fats</th>
-            <th>Protein</th>
-            <th>Sugar</th>
-            <th>Dietary Fiber</th>
-            <th>Cholesterol</th>
-            <th>Sodium</th>
-            <th>Potassium</th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let food of resultArray" class="table table-striped">
-        <tr>
-            <td>
-                {{food.Name}}
-            </td>
-            <td>
-                {{food.Serving_Size}}
-            </td>
-            <td>
-                {{food.Calories}}
-            </td>
-            <td>
-                {{food.Total_Carbohydrates}}
-            </td>
-            <td>
-                {{food.Total_Fat}}
-            </td>
-            <td>
-                {{food.Saturated_Fat}}
-            </td>
-            <td>
-                {{food.Protein}}
-            </td>
-            <td>
-                {{food.Sugars}}
-            </td>
-            <td>
-                {{food.Dietary_Fiber}}
-            </td>
-            <td>
-                {{food.Cholesterol}}
-            </td>
-            <td>
-                {{food.Sodium}}
-            </td>
-            <td>
-                {{food.Potassium}}
-            </td>
-            <td>
-                <img src={{food.Image}} width="50">
-            </td>
-            
-
-            <td>
-                <button class="btn btn-danger" (click)="removeFood(food)">Remove</button>
-            </td>
-        </tr>
-    </tbody>
-    
-</table>
-
-<table>
-    <tr>
-        <input type="datetime-local" #dateTime>
-    </tr>
-    <tr>
-        <button (click)="saveLogToDb()">Add to log</button>
-    </tr>
-</table>
-
-</div>
-
-<div>
-    {{responseMessage}}
-</div>
- -->
-
-
- <div class="container">
-    <h2>Search Food</h2>
+  <div class="container">
+    <h2 class="text-center">Search Food</h2>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-10 text-center">
         <div class="form-group">
-          <textarea class="form-control" rows="1" #query></textarea>
+          <textarea class="form-control" rows="1" cols="50" placeholder="e.g., 250g white rice, 400g roasted chicken thigh, 100g broccoli" #query></textarea>
         </div>
       </div>
-      <div class="col-md-6">
-        <button class="btn btn-primary" (click)="search()">Search</button>
+      <div class="col-md-1 text-center">
+        <button class="btn btn-primary btn-lg" (click)="search()">Search</button>
       </div>
     </div>
   </div>

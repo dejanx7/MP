@@ -1,4 +1,4 @@
-<h1>Food Log</h1>
+<h2>Food Log</h2>
 
 <div *ngFor="let log of logList" class="container mt-4">
     <table>
@@ -6,6 +6,7 @@
             <td>
                 <h3>{{ log.DateTime | date: 'dd/MM/yyyy HH:mm' }}</h3>
             </td>
+ 
             <td>
                 <button class="btn btn-danger" (click)="deleteLog(log._id)">Delete</button>
             </td>
