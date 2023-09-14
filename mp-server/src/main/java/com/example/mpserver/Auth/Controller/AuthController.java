@@ -35,7 +35,7 @@ import com.example.mpserver.Mail.MailService;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true")
+// @CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

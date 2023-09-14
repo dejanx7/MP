@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.mpserver.Nutrix.Service.NutrixService;
 
-@CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
+// @CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
 @RestController
 @RequestMapping(path = "api/nutri")
 public class NutrixController {

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.mpserver.User.Repository.UserFoodRepository;
 import com.example.mpserver.User.Service.UserService;
 
-@CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
+// @CrossOrigin(origins = "http://localhost:4201", maxAge = 3600, allowCredentials = "true" )
 @RestController
 @RequestMapping("api/db")
 public class UserController {
