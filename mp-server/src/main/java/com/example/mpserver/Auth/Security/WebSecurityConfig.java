@@ -63,6 +63,7 @@ public class WebSecurityConfig {
                         .requestMatchers("/api/nutri/**").permitAll()
                         .requestMatchers("/api/db/**").permitAll()
                         .requestMatchers("/send/**").permitAll()
+                        .requestMatchers("/**").permitAll()
                         .anyRequest().authenticated());
 
         http.authenticationProvider(authenticationProvider());
