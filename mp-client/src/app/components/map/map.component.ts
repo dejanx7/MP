@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
+import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { Observable, catchError, map, of } from 'rxjs';
 
 
@@ -12,7 +13,15 @@ import { Observable, catchError, map, of } from 'rxjs';
 
 export class MapComponent {
 
+  @ViewChild('myGoogleMap', { static: false })
+  map!: GoogleMap;
+  @ViewChild(MapInfoWindow, { static: false })
+  info!: MapInfoWindow;
+
   apiLoaded: Observable<boolean>;
+
+  markers = []  as  any;
+  infoContent = ''
 
   options: google.maps.MapOptions = {
     center: {lat: 40, lng: -20},
@@ -30,6 +39,13 @@ export class MapComponent {
           catchError(() => of(false)),
         );
   }
+
+  openInfo(marker: MapMarker, content: string) {
+    this.infoContent = content;
+    this.info.open(marker)
+  }
+
+
 
 
   

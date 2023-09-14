@@ -3,8 +3,9 @@
 <div *ngFor="let log of logList" class="container mt-4">
     <table>
         <tr>
+
             <td>
-                <h3>{{ log.DateTime | date: 'dd/MM/yyyy HH:mm' }}</h3>
+                Date and Time:<h4>{{ log.DateTime | date: 'dd/MM/yyyy HH:mm' }}</h4>
             </td>
  
             <td>

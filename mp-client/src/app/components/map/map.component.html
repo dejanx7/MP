@@ -2,7 +2,18 @@
 <div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
     <div>
       <div *ngIf="apiLoaded | async">
-        <google-map [options]="options"></google-map>
+        <google-map [options]="options">
+            <map-marker
+                #markerElem="mapMarker"
+                *ngFor="let marker of markers"
+                [position]="marker.position"
+                [label]="marker.label"
+                [title]="marker.title"
+                [options]="marker.options"
+                (mapClick)="openInfo(markerElem, marker.info)"
+            >
+            </map-marker>
+        </google-map>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <div id="app">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">MACROTRACKER</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -40,7 +40,51 @@
           </ul>
         </div>
       </nav>
+     -->
+
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">MACROTRACKER</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/donate">Donate</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/map">Map</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a class="nav-link" href="/register" routerLink="register">Register</a>
+      </li>
+      <li class="nav-item" *ngIf="!isLoggedIn">
+        <a class="nav-link" href="/login" routerLink="login">Login</a>
+      </li>
+      <ul class="navbar-nav" *ngIf="isLoggedIn"> <!-- Move this ul inside the parent ul for responsive dropdown -->
+        <li class="nav-item">
+          <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a class="nav-link" href="/search" routerLink="search">Get Macros</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+      </ul>
+    </ul>
+  </div>
+</nav>
+
     
+
+
+
     <router-outlet></router-outlet>
 
 </div>

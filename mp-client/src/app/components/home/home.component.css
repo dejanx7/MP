@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh; 
+  }
+
+
+
+
+.typewriter {
+    overflow: hidden; /* Hide overflow content */
+    text-align: center; 
+  }
+  
+  .typewriter-text {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xxx-large;
+    display: inline-block; /* Display text inline */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow content */
+    border-right: 2px solid #000; /* Create cursor effect */
+    animation: typing 8s steps(30, end) infinite, blink-caret 0.5s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 110%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #000;
+    }
+  }
+  

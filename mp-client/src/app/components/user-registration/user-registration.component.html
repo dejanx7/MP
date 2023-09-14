@@ -53,6 +53,9 @@
           <label for="password">Password:</label>
           <input type="password" id="password" class="form-control" name="password" formControlName="password">
         </div>
+        <div *ngIf="isSubmitted && userRegisterForm.get('password').hasError('required')" class="alert alert-danger">
+            Please enter a valid password.
+        </div>
         <br>
         <button type="submit" class="btn btn-primary">Register</button>
       </div>

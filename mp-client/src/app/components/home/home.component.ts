@@ -9,6 +9,15 @@ export class HomeComponent implements OnInit{
 
 
   ngOnInit(): void {
+
+    setTimeout(() => {
+      this.startTypewriterEffect();
+    }, 500); // Delay in milliseconds
+
+    
+  }
+
+  startTypewriterEffect() {
     
   }
 
