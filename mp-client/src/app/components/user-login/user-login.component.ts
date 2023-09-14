@@ -70,8 +70,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   reloadPage(): void {
-
-    window.location.replace('http://localhost:4201/home');
+    window.location.replace('/home');
   }
 
 
