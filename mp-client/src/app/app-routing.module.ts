@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'donate', component: DonateComponent},
   {path: 'map', component: MapComponent},
   {path: 'testuser', component: TestUserComponent, canActivate:[authGuard]},
-  {path: '**', redirectTo: 'home', pathMatch: 'full'}
+  {path: '**', redirectTo:'home', pathMatch: 'full'}
 
 ];
 
