@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { CanActivateFn } from '@angular/router';
 import { Observable } from 'rxjs';
 
-const AUTH_API = 'http://localhost:8081/api/auth/';
+const AUTH_API = '/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

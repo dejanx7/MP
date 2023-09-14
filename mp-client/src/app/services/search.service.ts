@@ -21,7 +21,7 @@ export class SearchService {
     queryParams = queryParams.set("query", query)
 
 
-    return this.http.get('http://localhost:8081/api/nutri/getmacros', {params : queryParams});
+    return this.http.get('/api/nutri/getmacros', {params : queryParams});
 
   }
 
@@ -37,7 +37,7 @@ export class SearchService {
 
     console.log("new log is ", newLog);
 
-    return this.http.post('http://localhost:8081/api/db/postlog', newLog ,{responseType: 'text'});
+    return this.http.post('/api/db/postlog', newLog ,{responseType: 'text'});
 
   }
 
@@ -46,7 +46,7 @@ export class SearchService {
     let queryParams = new HttpParams();
     queryParams = queryParams.set("user_id", id);
 
-    return this.http.get('http://localhost:8081/api/db/getlog', {params : queryParams});
+    return this.http.get('/api/db/getlog', {params : queryParams});
 
   }
 
@@ -55,7 +55,7 @@ export class SearchService {
     let queryParams = new HttpParams();
     queryParams = queryParams.set("logId", logId);
 
-    return this.http.delete('http://localhost:8081/api/db/deletelog', {params : queryParams});
+    return this.http.delete('/api/db/deletelog', {params : queryParams});
 
   }
 
