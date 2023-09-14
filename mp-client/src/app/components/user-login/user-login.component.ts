@@ -70,7 +70,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   reloadPage(): void {
-    window.location.replace('/home');
+    this.router.navigate[('/home')];
   }
 
 
